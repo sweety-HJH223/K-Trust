@@ -1,5 +1,6 @@
 import json
 import os
+import uvicorn 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from google import genai
@@ -118,3 +119,5 @@ PUBLIC SENTIMENT:
             **structured_data  # unpacks all Gemini fields into same object
         }
     }
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
