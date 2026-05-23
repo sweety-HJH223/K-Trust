@@ -1,0 +1,116 @@
+{
+  "merchants": {
+    "CPNG-KR-00421": {
+      "merchant_id": "CPNG-KR-00421",
+      "company_name": "SeoulTech Electronics Co., Ltd.",
+      "platform": "Coupang",
+      "registration_number": "220-81-67432",
+      "ceo_name": "Kim Jun-ho",
+      "founded": "2017-03-15",
+      "category": "Consumer Electronics",
+      "raw_data": {
+        "legal_records": [
+          "2023-09: Small claims dispute filed by buyer (Order #CPN-9921) — resolved in seller's favor after 14 days.",
+          "2024-01: No active litigation found in Seoul Central District Court records.",
+          "2024-11: Trademark registration approved for brand 'SeoulTech' under class 9."
+        ],
+        "financial_signals": [
+          "Payroll tax filings consistent for 6 consecutive quarters (NTS records, Q1 2023 – Q2 2024).",
+          "VAT return submitted on time for all 8 reporting periods since incorporation.",
+          "No record of bounced supplier payments in Korea Federation of SMEs database.",
+          "Estimated annual revenue band: ₩2.1B – ₩3.4B (sourced from DART supplementary filings)."
+        ],
+        "executive_changes": [
+          "No CEO change recorded since founding in 2017.",
+          "CFO appointment: Park So-yeon (2022-06), replacing retiring CFO Choi Byung-il."
+        ],
+        "platform_metrics": [
+          "Coupang seller rating: 4.7 / 5.0 (based on 12,450 verified reviews).",
+          "Return rate: 2.1% (industry average: 4.8%).",
+          "Late shipment rate: 0.4% (industry benchmark: 2.0%).",
+          "Top 3% seller badge held continuously since 2021."
+        ],
+        "naver_sentiment": [
+          "Naver blog post (2024-10-02): '서울텍 전자에서 주문한 노트북 정말 빠르게 왔어요. 포장도 꼼꼼하고 AS도 친절합니다!' (Translation: Fast delivery, careful packaging, friendly after-sales service.)",
+          "Naver cafe review (2024-08-15): '가격 대비 품질이 너무 좋아요. 재구매 의사 있습니다.' (Translation: Excellent quality for the price. Will repurchase.)",
+          "Naver blog (2024-11-20): '고객센터 응답이 조금 느린 편이지만 제품 자체는 만족합니다.' (Translation: Customer service response is a bit slow but satisfied with the product itself.)"
+        ]
+      }
+    },
+    "NVRSMRT-KR-00887": {
+      "merchant_id": "NVRSMRT-KR-00887",
+      "company_name": "Hanguk Smart Living Inc.",
+      "platform": "Naver Smart Store",
+      "registration_number": "104-86-33201",
+      "ceo_name": "Lee Soo-jin",
+      "founded": "2020-09-01",
+      "category": "Home & Lifestyle",
+      "raw_data": {
+        "legal_records": [
+          "2023-04: Consumer dispute escalated to Korea Consumer Agency — seller failed to respond within mandatory 7-day window. Ruling: partial refund ordered.",
+          "2023-11: Second consumer complaint filed. Status: under mediation.",
+          "2024-03: Small claims court filing (Case #2024-소-00341) — plaintiff alleges counterfeit goods. Case ongoing.",
+          "2024-07: Korea Fair Trade Commission (KFTC) issued advisory warning regarding misleading product descriptions."
+        ],
+        "financial_signals": [
+          "VAT return missed for Q3 2023 — penalty notice issued by NTS.",
+          "Supplier payment dispute logged with Korea Credit Bureau (KCB) in 2024-02.",
+          "No DART filings found — company below disclosure threshold but revenue signals inconsistent.",
+          "Estimated annual revenue band: ₩180M – ₩340M, showing declining trend YoY."
+        ],
+        "executive_changes": [
+          "CEO changed from Park Min-jun to Lee Soo-jin in 2023-08 — abrupt transition, no press release.",
+          "CFO position currently vacant as of last public record (2024-05)."
+        ],
+        "platform_metrics": [
+          "Naver Smart Store rating: 3.2 / 5.0 (based on 1,820 reviews).",
+          "Return rate: 11.4% (industry average: 4.8%).",
+          "Late shipment rate: 8.7% (industry benchmark: 2.0%).",
+          "Store warning badge issued by Naver for policy violations (2024-09)."
+        ],
+        "naver_sentiment": [
+          "Naver blog (2024-09-10): '제품이 사진과 완전히 달라요. 환불도 안 해줘서 너무 화가 납니다.' (Translation: Product looks nothing like the photos. They refused to refund. Very angry.)",
+          "Naver cafe (2024-10-01): '배송이 3주나 걸렸는데 연락도 없었어요. 다시는 구매 안 합니다.' (Translation: Took 3 weeks to ship with no communication. Never buying again.)",
+          "Naver blog (2024-11-05): '가품 의심됩니다. 정품 인증서 요청했는데 묵묵부답이에요.' (Translation: Suspected counterfeit. Requested authenticity certificate but got no response.)"
+        ]
+      }
+    },
+    "KAKAO-KR-00156": {
+      "merchant_id": "KAKAO-KR-00156",
+      "company_name": "Busan Fresh Foods Co.",
+      "platform": "Kakao Commerce",
+      "registration_number": "607-81-44892",
+      "ceo_name": "Choi Yeon-soo",
+      "founded": "2015-06-20",
+      "category": "Food & Agriculture",
+      "raw_data": {
+        "legal_records": [
+          "No litigation records found in any district court database.",
+          "HACCP certification active — renewal confirmed 2024-07.",
+          "Export license to Japan and Singapore active as of 2024-Q3."
+        ],
+        "financial_signals": [
+          "Consistent VAT and payroll tax filings for all 9 years of operation.",
+          "DART filing (2023 annual): Revenue ₩8.7B, Net profit margin 11.2%.",
+          "Credit rating: A- (Korea Credit Bureau, issued 2024-06).",
+          "No supplier payment disputes on record."
+        ],
+        "executive_changes": [
+          "CEO Choi Yeon-soo has led company since founding in 2015.",
+          "Board expanded in 2023 with appointment of two independent directors."
+        ],
+        "platform_metrics": [
+          "Kakao Commerce rating: 4.9 / 5.0 (based on 34,200 verified reviews).",
+          "Return rate: 1.2% (industry average: 4.8%).",
+          "Late shipment rate: 0.2% (industry benchmark: 2.0%).",
+          "Featured as Kakao Commerce 'Excellence Award' winner 2022 and 2023."
+        ],
+        "naver_sentiment": [
+          "Naver blog (2024-10-15): '부산 신선식품은 진짜 믿을 수 있는 업체예요. 매주 주문합니다.' (Translation: Busan Fresh Foods is truly trustworthy. I order every week.)",
+          "Naver cafe (2024-11-02): '신선도가 정말 놀랍습니다. 마트보다 훨씬 좋아요.' (Translation: Freshness is truly impressive. Much better than supermarkets.)",
+          "Naver blog (2024-09-28): '선물용으로 보냈는데 포장이 너무 예뻐서 받은 분들이 다들 좋아했어요.' (Translation: Sent as a gift — the packaging was so beautiful that everyone loved it.)"
+        ]
+      }
+    }
+  }
+}
