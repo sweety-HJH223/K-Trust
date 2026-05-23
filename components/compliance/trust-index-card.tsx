@@ -34,17 +34,18 @@ export default function TrustIndexCard({
   const normalizedRadius = radius - stroke / 2;
   const circumference = 2 * Math.PI * normalizedRadius;
 
-  useEffect(() => {
-    if (score === null) { setAnimatedScore(0); return; }
-    let start = 0;
-    const step = score / 60; // animate over ~60 frames
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= score) { setAnimatedScore(score); clearInterval(timer); }
-      else setAnimatedScore(Math.floor(start));
-    }, 16);
-    return () => clearInterval(timer);
-  }, [score]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  if (score === null) { setAnimatedScore(0); return; }
+  let start = 0;
+  const step = score / 60;
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= score) { setAnimatedScore(score); clearInterval(timer); }
+    else setAnimatedScore(Math.floor(start));
+  }, 16);
+  return () => clearInterval(timer);
+}, [score]);
 
   const offset =
     circumference - (animatedScore / 100) * circumference;
