@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# K-Trust — Korean Market Compliance Portal
 
-## Getting Started
+> AI-powered B2B compliance verification system for South Korean merchants and platforms.
 
-First, run the development server:
+**Live Demo:** https://project-4xzgu-blush.vercel.app  
+**GitHub:** https://github.com/sweety-HJH223/K-Trust
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## What It Does
+
+K-Trust is an enterprise compliance portal that audits South Korean merchants and platforms. Enter a merchant ID and the system instantly returns a structured risk assessment — trust score, legal status, financial health signals, public sentiment, and an AI-generated compliance summary.
+
+It solves a real problem: international businesses trying to verify Korean partners face language barriers, fragmented data sources, and no unified risk scoring. K-Trust bridges that gap.
+
+---
+
+## Demo
+
+| Merchant ID | Company | Expected Result |
+|---|---|---|
+| `CPNG-KR-00421` | SeoulTech Electronics | Score ~92, Low Risk |
+| `NVRSMRT-KR-00887` | Hanguk Smart Living | Score ~10, Critical Risk |
+| `KAKAO-KR-00156` | Busan Fresh Foods | Score ~95, Low Risk |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 15, TypeScript, Tailwind CSS |
+| Backend | Python, FastAPI, Uvicorn |
+| AI Engine | Google Gemini 2.5 Flash |
+| Data Validation | Pydantic |
+| Frontend Hosting | Vercel |
+| Backend Hosting | Railway |
+
+---
+
+## Architecture
+
+```
+User → Next.js (Vercel)
+         ↓ POST /audit
+       FastAPI (Railway)
+         ↓ reads
+       market_intelligence.json (mock DB)
+         ↓ prompt
+       Gemini 2.5 Flash API
+         ↓ structured JSON
+       FastAPI → Next.js → UI renders
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The AI pipeline uses `response_schema` enforcement — Gemini is constrained to return a typed Pydantic model, not free-form text. This guarantees the frontend always receives a predictable, parseable data structure.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## AI Engineering Highlights
 
-## Learn More
+**Structured Output Enforcement** — instead of prompting Gemini to "please return JSON," the system passes a Pydantic model as `response_schema`. Gemini is forced to match the exact field types and structure. No markdown stripping, no defensive parsing.
 
-To learn more about Next.js, take a look at the following resources:
+**Deterministic Compliance Scoring** — the system prompt includes a strict scoring rubric so Gemini produces consistent, auditable results rather than random assessments.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Mock Data Layer** — merchant data is structured as a dictionary keyed by merchant ID for O(1) lookup. Raw data fields are intentionally unstructured strings (simulating scraped Korean court records, tax filings, sentiment data) — demonstrating that the LLM's role is extraction and classification, not just display.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Running Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Backend**
+```bash
+cd backend
+pip install -r requirements.txt
+# Add GEMINI_API_KEY to .env
+uvicorn main:app --reload --port 8000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Frontend**
+```bash
+# Add NEXT_PUBLIC_API_URL=http://localhost:8000 to .env.local
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`
+
+---
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Health check |
+| GET | `/merchants` | List all available merchant IDs |
+| POST | `/audit` | Run AI compliance audit |
+
+**POST /audit request:**
+```json
+{ "merchant_id": "CPNG-KR-00421" }
+```
+
+**POST /audit response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "trust_score": 92,
+    "risk_level": "Low",
+    "risk_tags": ["Minor Customer Service Lag"],
+    "legal_status": true,
+    "financial_risk": true,
+    "sentiment_score": true,
+    "executive_stability": true,
+    "summary": "SeoulTech Electronics demonstrates strong compliance..."
+  }
+}
+```
+
+---
+
+## Environment Variables
+
+**Backend `.env`**
+```
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+**Frontend `.env.local`**
+```
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+---
+
+## Roadmap
+
+- Connect to Korea's DART financial API for real company data
+- Integrate Naver Search API for live public sentiment
+- Add historical audit logging with PostgreSQL
+- Multi-language support (Korean UI)
+
+---
+
+Built by [@sweety-HJH223](https://github.com/sweety-HJH223)
